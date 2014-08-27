@@ -3,7 +3,6 @@ class IRCBOT {
   private $server;
   private $channel;
   private $botnick;
-  private $socket;
 
   function __construct ($server, $channel, $botnick) {
     $this->server = stream_socket_client ($server);
@@ -11,8 +10,8 @@ class IRCBOT {
     $this->botnick = $botnick;
 
     fwrite($this->server, "USER " . $this->botnick . " " . $this->botnick . " " . $this->botnick . " :logbot\n");
-    fwrite($this->server, "NICK " . $this->botnick ."\n");
-    fwrite($this->server, "JOIN " . $this->channel ."\n");
+    fwrite($this->server, "NICK " . $this->botnick . "\n");
+    fwrite($this->server, "JOIN " . $this->channel . "\n");
   }
 
   function wait () {
