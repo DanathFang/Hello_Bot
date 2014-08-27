@@ -3,7 +3,6 @@ class IRCBOT {
   private $server;
   private $channel;
   private $botnick;
-  private $socket;
 
   function __construct ($server, $channel, $botnick) {
     $this->server = stream_socket_client ($server);
