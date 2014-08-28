@@ -36,7 +36,24 @@ class IRCBOT {
   }
 
   function action ($nick, $say) {
-    echo $nick . ":" . $say . "\n";
+    switch($nick) {//--判讀說話的人的暱稱
+      case "一卡":
+          switch($say) {//判斷一卡說了啥？
+            case "HELLO":
+            case "HI":
+            case "你好":  
+              echo "一卡主人你好啊，人家好期待你今天分享的資訊喔，請務必要跟人家說喔~";
+              break;
+            default: 
+              echo "";
+              break;
+          }
+          break;
+      default:
+          echo $nick . ":" . $say . "\n";
+          break;
+    }
+    //echo $nick . ":" . $say . "\n";
   }
 }
 
